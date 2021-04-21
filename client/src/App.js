@@ -7,7 +7,7 @@ import { Button } from 'react-bootstrap';
 const App = () => {
 
   const [muuttuja, setMuuttuja] = useState([])
-  const [toinenMuuttuja, setToinenMuuttuja] = useState()
+  const [toinenMuuttuja, setToinenMuuttuja] = useState() // Tilamuuttuja??
   
 
   const GetData = () => {
