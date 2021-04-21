@@ -4,7 +4,6 @@ import { Table } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 
 
-
 const App = () => {
 
   const [muuttuja, setMuuttuja] = useState([])
@@ -73,6 +72,7 @@ const App = () => {
             </div>
           </form>
         </div>
+        <GetData />
         <div>{toinenMuuttuja}</div>
     </>
   );
