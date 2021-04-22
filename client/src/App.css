@@ -39,9 +39,42 @@
 
 button {
   margin: 10px;
+  font-family: "Crimson Text", Georgia;
 }
 
 table {
-  margin: 10px;
+  margin-top: 40px;
+  background-color: white;
+  font-family: "Crimson Text", Georgia;
 }
+
+.form-control {
+  margin: 10px;
+ width: 60%;
+ float: left;
+ font-family: "Crimson Text", Georgia;
+}
+
+h1 {
+  font-size: 60px;
+  color: white;
+  font-family: 'Harry Potter', sans-serif;
+}
+
+p {
+  margin: 10px;
+  padding-top: 20px;
+  color:white;
+  font-family: "Crimson Text", Georgia;
+}
+
+.jumbotron {
+  background-color: rgba(000, 0, 0, 0.0);
+}
+
+.container {
+  min-height: 1200px;
+  background-image: url("https://cdn.pixabay.com/photo/2017/05/27/15/47/harry-potter-2348767_1280.jpg")
+}
+
 
