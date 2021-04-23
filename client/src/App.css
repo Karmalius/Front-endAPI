@@ -40,16 +40,18 @@
 button {
   margin: 10px;
   font-family: "Crimson Text", Georgia;
+
 }
 
 table {
   margin-top: 40px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9);;
   font-family: "Crimson Text", Georgia;
 }
 
 .form-control {
   margin: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
  width: 60%;
  float: left;
  font-family: "Crimson Text", Georgia;
@@ -57,14 +59,14 @@ table {
 
 h1 {
   font-size: 60px;
-  color: white;
+  color: rgba(255, 255, 255, 0.9);
   font-family: 'Harry Potter', sans-serif;
 }
 
 p {
   margin: 10px;
   padding-top: 20px;
-  color:white;
+  color: rgba(255, 255, 255, 0.8);
   font-family: "Crimson Text", Georgia;
 }
 
