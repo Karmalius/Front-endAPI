@@ -10,7 +10,7 @@ const Fictable = ({ muuttuja }) => {
   return (
     <>
       {muuttuja.length > 0 && <div>
-        <Table striped bordered variant="dark" responsive="sm">
+        <Table striped responsive="sm">
           <thead>
             <tr>
               <th>Name</th>
@@ -40,7 +40,9 @@ const Fictable = ({ muuttuja }) => {
 
 const App = () => {
 
-  const [muuttuja, setMuuttuja] = useState([])
+  const [all, setAll] = useState([])
+  const [name, setName] = useState('')
+  const [id, setId] = useState('')
 
   const getData = () => {
 
@@ -49,7 +51,29 @@ const App = () => {
         return result.json();
       })
       .then((data) => {
-        setMuuttuja(data)
+        setAll(data)
+      });
+  }
+
+  const getName = () => {
+
+    fetch("https://ficlibrary.herokuapp.com/api/name/" + name)
+      .then((result) => {
+        return result.json();
+      })
+      .then((data) => {
+        setAll(data)
+      });
+  }
+
+  const getId = () => {
+
+    fetch("https://ficlibrary.herokuapp.com/api/" + id)
+      .then((result) => {
+        return result.json();
+      })
+      .then((data) => {
+        setAll(data)
       });
   }
 
@@ -76,11 +100,15 @@ const App = () => {
             <p>SEARCH BY NAME</p>
           <input
         type="search"
+        value={name}
+        onChange={(event) => setName(event.target.value)}
+        name="name"
         className="form-control"
         placeholder="Example: Draco Malfoy and the Letter from the Future"
       />
             <Button
-              type="submit"
+              type="button"
+              onClick={getName}
               variant="success"
             >
               SEARCH
@@ -90,18 +118,22 @@ const App = () => {
           <p>SEARCH BY ID</p>
           <input
         type="search"
+        value={id}
+        onChange={(event) => setId(event.target.value)}
+        name="id"
         className="form-control"
         placeholder="Example: 6066e79cdfe1269a82c6c0ca"
       />
             <Button
               type="button"
+              onClick={getId}
               variant="success"
             >
               SEARCH
               </Button>
           </div>
         </form>
-        <Fictable muuttuja={muuttuja} />
+        <Fictable muuttuja={all} />
       </div>
       </Container>
     </>
