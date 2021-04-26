@@ -1,3 +1,5 @@
+// Otetaan käyttöön react-kirjasto, haetaan CSS-tyylitiedosto ja otetaan käyttöön Bootstrap-komponentteja.
+
 import { useState } from 'react';
 import "./App.css"
 import { Table } from 'react-bootstrap';
@@ -5,6 +7,8 @@ import { Button } from 'react-bootstrap';
 import { Jumbotron } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 
+
+// Komponentin määrittely. Luo taulukon, jossa API:sta haettu data esitetään.
 const Fictable = ({ muuttuja }) => {
 
   return (
@@ -38,12 +42,15 @@ const Fictable = ({ muuttuja }) => {
 
 }
 
+// Komponentin määrittely. 
 const App = () => {
 
+  // Luodaan useState-muuttujia, joihin muutoksia tehdessä React uudelleenrenderöi sivun, ja muutokset näkyvät sivulla.
   const [all, setAll] = useState([])
   const [name, setName] = useState('')
   const [id, setId] = useState('')
 
+  // Komponentin määrittely. Hakee kaiken datan API:sta AJAX:illa Fetch:in avulla.
   const getData = () => {
 
     fetch("https://ficlibrary.herokuapp.com/api/getall")
@@ -55,6 +62,7 @@ const App = () => {
       });
   }
 
+  // Komponentin määrittely. Hakee dataa API:sta kirjoitetun nimen perusteella AJAX:illa Fetch:in avulla.
   const getName = () => {
 
     fetch("https://ficlibrary.herokuapp.com/api/name/" + name)
@@ -66,6 +74,7 @@ const App = () => {
       });
   }
 
+  // Komponentin määrittely. Hakee dataa API:sta kirjoitetun id:n perusteella AJAX:illa Fetch:in avulla.
   const getId = () => {
 
     fetch("https://ficlibrary.herokuapp.com/api/" + id)
@@ -77,6 +86,8 @@ const App = () => {
       });
   }
 
+
+  // App-komponentin palauttama esitys, jossa on Form input-kentillä sekä napeilla, jotka kutsuvat (AJAX-kutsu)komponentteja.
   return (
     <>
     <Container className="container">
@@ -140,5 +151,6 @@ const App = () => {
   );
 
 }
+
 
 export default App
