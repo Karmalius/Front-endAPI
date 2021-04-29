@@ -31,7 +31,7 @@ const Fictable = ({ muuttuja }) => {
                 <td key={data.pairing}> {data.pairing} </td>
                 <td key={data.plot}> {data.plot} </td>
                 <td key={data.chapters}> {data.chapters} </td>
-                <td key={data.link}><a href="{data.link}">Read</a></td>
+                <td key={data.link}><a href={data.link}>Read</a></td>
               </tr>
             ))}
           </tbody>
